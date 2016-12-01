@@ -11,13 +11,68 @@
   </head>
   <body>
     <div id="content">
-      <div id="ribbon">Form me on Github</div>
+      <div id="ribbon">Fork me on Github</div>
       <div id="title">Git</div>
       <div id="toc"></div>
+
       <h1>Préface</h1>
       <p>Ce document est inspiré du &laquo;&nbsp;<a href="https://git-scm.com/book/fr">Book</a>&nbsp;&raquo; écrit par Scott Chacon et Ben Straub, publié chez Apress. Plusieurs des paragraphes sont copiés de la traduction française de cet ouvrage.</p>
+
       <h1>Avant de commencer</h1>
+
       <h2>Qu'est-ce que gestion de version ?</h2>
+      <p>Un système de gestion de version enretistre l'évolution d'un fichier au cours du temps. C'est-à-dire qu'il ne se contente pas de sauvegarder les fichiers d'un projet, il garde également toutes les anciennes versions de chacun de ses fichiers.</p>
+
+      <p>Avant cette technologie, il était nécessaire d'enregistrer séparément chaque version, de garder dans un dossier &laquo;&nbsp;archives&nbsp;&raquo; toutes les versions précédentes et surtout, de faire attention à ne pas écraser le mauvais fichier !</p>
+
+      <h2>Que permet un gestionnaire de version ?</h2>
+      <p>Dire qu'un <abbr title="Version Control System">VCS</abbr> sert à garder les anciennes versions d'un projet ne serait qu'observer de loin un drapeau planté au sommet d'un iceberg. Les capacités de Git et de ses semblables sont bien plus étendues que ça et nous le verrons dans ce document. Les outils fournis par Git permettent par exemple de :
+      <ul>
+        <li>Garder chaque version d'un logiciel, d'un document ou d'autres types de données.</li>
+        <li>Travailler de manière collaborative sur le même fichier au même moment.</li>
+        <li>Gérer automatiquement ou manuellement les conflits inhérents aux projets de groupe.</li>
+        <li>Savoir qui a écrit une ligne donnée.</li>
+        <li>Créer plusieurs versions du même projet et les maintenir de manière simultanée.</li>
+        <li>Isoler une erreur introduite dans une version récente sans avoir à chercher dans les fichiers.</li>
+        <li>&hellip;</li>
+      </ul>
+      </p>
+      <p>Git, ça n'est pas un logiciel, c'est en fait un regroupement de presque 150 micro-logiciels, regroupés sous un seul nom. (Certains de ces logiciels ne sont que des raccourcis vers une séquence d'autres, mais il faut voir Git comme un couteau suisse, analogie d'ailleurs déjà reprise par <a href="https://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">ce site</a>).</p>
+
+      <h2>Types de VCS</h2>
+      <p>Il existe deux types de gestionnaires de versions : les centralisés et les distribués. Voici leurs différences :</p>
+
+      <h3>VCS centralisé</h3>
+      <p>Dans l'historique des systèmes de gestion de version, CVS et SVN (les &laquo;&nbsp;ancêtres&nbsp;&raquo; de Git) étaient centralisés. C'est-à-dire que leurs données se trouvaient sur un serveur et que des clients pouvaient aller y piocher une version définie. Le serveur s'occupait de gérer tous les conflits et les différentes versions.</p>
+
+      <h3>VCS distribué</h3>
+      <p>Les systèmes de gestion de version plus récent, tels que Git ou Mercurial, sont distribués. C'est-à-dire que l'historique des versions et toutes les données inhérentes au projet se trouvent sur la machine de travail. Lorsqu'il y a synchronisation, tout l'historique est transféré dans un sens ou dans l'autre.</p>
+
+      <h3>Avantages et inconvénients</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Type de VCS</th>
+            <th>Avantage</th>
+            <th>Inconvénient</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Centralisé</th>
+            <td>Peu de place sur le poste de travail</td>
+            <td>Nécessite une connexion pour la synchronisation</td>
+          </tr>
+          <tr>
+            <th>Distribué</th>
+            <td>Redondant, perte de données pratiquement impossible</td>
+            <td>Génère un historique tentaculaire, difficile à maintenir</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Aperçu de Git</h2>
+      <p>Comprendre ce chapitre, c'est comprendre le fonctionnement de base de Git. Prenez bien le temps d'assimiler les différents concepts qui suivent.</p>
     </div>
     <footer>
       <div>
