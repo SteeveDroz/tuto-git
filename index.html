@@ -97,9 +97,35 @@
       <h1>Fonctionnalités de base</h1>
       <p>Nous l'avons déjà vu, Git est un outil très puissant. En tant qu'utilisateur occasionnel, il est souvent fréquent de n'utiliser qu'une infime partie de Git. Voici ces parties indispensables.</p>
 
+      <h2>Créer un dépôt</h2>
+      <p>Un dépôt est un répertoire contenant l'intégralité du projet Git : les sources actuelles et passées, l'arborescence d'édition, les noms des branches et des étiquettes, etc. Pour créer un dépôt, une seule commande est nécessaire : <code>git init</code>. Lorsqu'un dépôt est créé, le répertoire courant et tous les sous-répertoires en font partie. Tous les fichiers se trouvant là seront potentiellement versionnés.</p>
+
+      <h3>Fichiers non-versionnés</h3>
+      <p>Il est préférable de ne pas versionner tous les fichiers. En règle général, les fichiers à ignorer sont :</p>
+      <ul>
+        <li>Les fichiers uniquement utiles à un IDE</li>
+        <li>Les fichiers générés automatiquement qui peuvent être regénérés</li>
+        <li>Les fichiers et exécutables compilés d'après les sources</li>
+        <li>Les fichiers provenant de tiers (bibliothèques, plugins, bundles, etc.)</li>
+        <li>Tout autre fichier qui peut être retrouvé ou recréé d'une autre manière</li>
+      </ul>
+      <p>Afin d'éviter que ces fichiers ne soient versionnés, il suffot de les ajouter dans un fichier placé à la racine du dépôt appelé <code>.gitignore</code>. Comme son nom l'indique, ce fichier contient une liste de tous les fichiers censés être ignorés par Git.</p>
+      <p>Le site GitHub (qui propose entre autre un hébergement de dépôts Git gratuit, nous en reparlerons), possède un dépôt qui regroupe tous les principaux fichiers gitignore. Avant le développement d'une application, téléchargez toujours le fichier correspondant à votre langage sur <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>.</p>
+      <div class="information">
+        Les fichiers gitignore spécifiques aux OS, aux IDE, aux logiciels, etc. sont dans le sous-répertoire &laquo;&nbsp;Global&nbsp;&raquo; du dépôt.
+      </div>
+      <p>Une fois téléchargé, le fichier doit être renommé en <code>.gitignore</code>. Par exemple, un développeur C++, devra télécharger <code>C++.gitignore</code> sur le dépôt GitHub et le renommer en <code>.gitignore</code>.</p>
+      <div class="attention">
+        L'explorateur de fichiers Windows n'accepte pas de renommer les fichiers si leur nom commence par un point. Pour ce faire, il est nécessaire d'utiliser la commende <code>ren</code>. Exemple, pour le même programmeur C++ : <code>ren C++.gitignore .gitignore</code>.
+      </div>
+      <div class="attention">
+        Sous Linux, les fichiers et répertoires dont le nom commence par un point sont des fichiers cachés. Il est fort probable que le renommage du fichier semble ne pas fonctionner. En rechargeant la page, cependant, on remarque que le fichier est devenu invisible.
+      </div>
+
       <h2>États des fichiers</h2>
-      <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés ci-dessous <a class="fig" data-url="img/diagramme-etat-fichier.svg"></a>.</p>
+      <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés ci-dessous <a href="img/diagramme-etat-fichier.svg" class="fig"></a>.</p>
       <img src="img/diagramme-etat-fichier.svg" alt="Diagramme d'état des fichiers">
+      <p>Un fichier non-versionné peut le devenir lorsqu'il est indexé puis versionné. Un fichier modifié peut être mis à jour exactement de la même façon. Une synchronisation est possible dans les deux sens lorsqu'on dispose d'un dépôt local et d'un dépôt distant (serveur).</p>
     </div>
     <footer>
       <div>
