@@ -1,5 +1,6 @@
 @import "elements.css";
 @import "pied-de-page.css";
+@import "fig.css";
 
 * {
   box-sizing: border-box;

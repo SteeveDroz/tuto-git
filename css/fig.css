@@ -1,0 +1,25 @@
+.figFrame {
+  background: #eef;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 5px;
+}
+
+.figFrame.left {
+  float: left;
+  margin-right: 20px;
+}
+
+.figFrame.right {
+  float: right;
+  margin-left: 20px;
+}
+
+.figFrame.center {
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  transform: translate(-50%);
+}
