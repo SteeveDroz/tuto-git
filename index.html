@@ -71,8 +71,34 @@
         </tbody>
       </table>
 
-      <h2>Aperçu de Git</h2>
-      <p>Comprendre ce chapitre, c'est comprendre le fonctionnement de base de Git. Prenez bien le temps d'assimiler les différents concepts qui suivent.</p>
+      <h2>Installation</h2>
+      <p>L'installation de Git est très simple pour les trois plateformes principales.</p>
+
+      <h3>Sous Linux</h3>
+      <p>Git se trouve dans la majorité des gestionnaires de paquets et est installé de base sur bon nombre de distributions. C'est normal, les concepteurs de Git sont les mêmes que ceux de Linux et ce système d'exploitation est lui-même <a href="https://github.com/torvalds/linux">versionné grâce à Git</a>.</p>
+      <p>Il est recommandé d'installer Git (outil en ligne de commandes), Git GUI (interface graphique) et gitk (visualisateur d'historique). Optionnellement, un comparateur peut être installé. Le comparateur est utile pour la gestion de conflits, mais ne nous perdons pas dans ces préoccupations pour l'instant.</p>
+      <p>L'installation se fait en ligne de commande grâce à votre outil favori :</p>
+      <ul>
+        <li>Debian/Ubuntu : <code># apt install git git-gui gitk</code></li>
+        <li>RedHat/Fedora : <code># dnf install git git-gui gitk</code></li>
+        <li>&hellip;</li>
+      </ul>
+
+      <h3>Sous Windows</h3>
+      <p>L'installation se fait grâce à un installeur situé sur la <a href="https://git-scm.com/downloads">page de téléchargement</a> du site officiel. L'installation par défaut offre toutes les fonctionnalités nécessaire à l'utilisation de Git.</p>
+
+      <h3>Sous Mac</h3>
+      <p>Comme pour Windows</p>
+      <div class="attention">
+        non-testé !
+      </div>
+
+      <h1>Fonctionnalités de base</h1>
+      <p>Nous l'avons déjà vu, Git est un outil très puissant. En tant qu'utilisateur occasionnel, il est souvent fréquent de n'utiliser qu'une infime partie de Git. Voici ces parties indispensables.</p>
+
+      <h2>États des fichiers</h2>
+      <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés <a class="fig" data-url="img/diagramme-etat-fichier.svg">ci-dessous</a>.</p>
+      <img src="img/diagramme-etat-fichier.svg" alt="Diagramme d'état des fichiers">
     </div>
     <footer>
       <div>
