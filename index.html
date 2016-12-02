@@ -124,8 +124,59 @@
 
       <h2>États des fichiers</h2>
       <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés ci-dessous <a href="img/diagramme-etat-fichier.svg" class="fig"></a>.</p>
-      <img src="img/diagramme-etat-fichier.svg" alt="Diagramme d'état des fichiers">
-      <p>Un fichier non-versionné peut le devenir lorsqu'il est indexé puis versionné. Un fichier modifié peut être mis à jour exactement de la même façon. Une synchronisation est possible dans les deux sens lorsqu'on dispose d'un dépôt local et d'un dépôt distant (serveur).</p>
+      <img class="center" src="img/diagramme-etat-fichier.svg" alt="Diagramme d'état des fichiers">
+      <p>Un fichier non-versionné peut le devenir lorsqu'il est indexé puis versionné.</p>
+      <p>Un fichier modifié peut être mis à jour exactement de la même façon.</p>
+      <p>Une synchronisation est possible dans les deux sens lorsqu'on dispose d'un dépôt local et d'un dépôt distant (serveur).</p>
+
+      <h2>Commandes utiles</h2>
+      <p>La liste des commandes ci-dessous est vitale car ce sont les commandes qui sont utilisées en permanence.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Commande</th>
+            <th>Explication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>git status</code></td>
+            <td>Affiche le statut actuel du dépôt Git.</td>
+          </tr>
+          <tr>
+            <td><code>git add un-fichier.txt</code></td>
+            <td>Ajoute &laquo;&nbsp;un-fichier.txt&nbsp;&raquo; aux fichiers indexés.</td>
+          </tr>
+          <tr>
+            <td><code>git add -A</code></td>
+            <td>Ajoute tous les fichiers non-versionnés et modifiés aux fichiers indexés.</td>
+          </tr>
+          <tr>
+            <td><code>git commit</code></td>
+            <td>Versionne tous les fichiers indexés après avoir demandé un message de description.</td>
+          </tr>
+          <tr>
+            <td><code>git commit -m "un message"</code></td>
+            <td>Versionne tous les fichiers indexés avec le message donné.</td>
+          </tr>
+          <tr>
+            <td><code>git push</code></td>
+            <td>Envoie la liste des versions sur le serveur (s'il est défini).</td>
+          </tr>
+          <tr>
+            <td><code>git pull</code></td>
+            <td>Récupère la liste des versions depuis le serveur (s'il est défini).</td>
+          </tr>
+          <tr>
+            <td><code>gitk</code></td>
+            <td>Lance le visualiseur d'historique de versions.</td>
+          </tr>
+          <tr>
+            <td><code>git checkout 71eb7</code></td>
+            <td>Récupère la version dont le code commence par 71eb7 (codes visibles par gitk).</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <footer>
       <div>
