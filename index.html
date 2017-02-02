@@ -177,6 +177,55 @@
           </tr>
         </tbody>
       </table>
+
+      <h3>git status</h3>
+      <p>Cette commande affiche des informations sur l'état actuel du dépôt. Exemple :</p>
+      <pre>
+        <code>
+Sur la branche master
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
+
+        <span style="color:red">modifié :         index.html</span>
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+
+        <span style="color:red">js/toc.js</span>
+        <span style="color:red">js/fig.js</span>
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+        </code>
+      </pre>
+
+      <h3>git add</h3>
+      <p>Cette commande requiert une liste des fichiers à versionner. La liste doit être passée à la commande directement. Il peut également s'agir de wildcards. Exemple : <code>git add fichier1.txt dossier/fichier2.txt *.html</code>.</p>
+      <p>Il est également possible d'ajouter tous les fichiers d'un seul coup, avec la commande <code>git add -A</code> ou <code>git add --all</code>.</p>
+      <p>Tous les fichiers indexés par cette commande depuis le dernier commit seront inclus dans le prochain.</p>
+
+      <h3>git commit</h3>
+      <p>Cette commande est le cœur de git. Une fois qu'au moins un fichier est indexé, il est possible de commiter. Le commit sauve l'état actuel du travail et le lie au précédent commit. Il sera ainsi toujours possible de revenir à une version précédente depuis une version donnée.</p>
+      <p>Un message de commit est obligatoire. En utilisant la commande <code>git commit</code>, l'éditeur configuré dans les préférences git est lancé et un message est demandé.</p>
+      <p>En utilisant l'option <code>-m</code>, le message peut être précisé directement dans la commande. Par exemple : <code>git commit -m "Ajout des styles CSS propres aux images"</code>.</p>
+
+      <h3>git push</h3>
+      <p>Git peut s'utiliser en local, mais il y a également la possibilité de synchroniser son travail avec un serveur. Pour cela, il faut premièrement configurer l'adresse du serveur dans le dépôt git local (voir le chapitre consacré).</p>
+      <p>Une fois que le serveur est configuré, l'appel à <code>git push</code> transférera l'état du dépôt local sur le serveur.</p>
+      <div class="information">
+        Ce n'est pas l'état actuel des fichiers qui est transmis au serveur, mais l'état du dépôt. C'est-à-dire que tous les commits antérieurs à l'état actuel vont être également sauvegardés. Ainsi, il est possible de travailler des heures en effectuant des commit fréquents et n'effectuer qu'un push par jour sans perdre les étapes intermédiaires.
+      </div>
+
+      <h3>git pull</h3>
+      <p>De manière analogue, effectuer un <code>git pull</code> ira rechercher sur le serveur les commits qui auraient été effectués par d'autres utilisateurs ou depuis un autre poste de travail et les ajoutera à l'arborescence des commits en local.</p>
+
+      <h3>gitk</h3>
+      <p>Le logiciel gitk est un visualiseur d'arborescence. Il permet de voir d'un seul coup d'œil tous les commits, leur message et leur date. Il offre également quelques fonctionalités telles que la récupération d'une ancienne version ou la création d'étiquettes.</p>
+      <div class="information">La majorité des serveurs d'hébergement offrent également cette fonctionnalité.</div>
+
+      <h3>git checkout</h3>
+      <p>Cette commande permet de se positionner ailleurs dans l'historique des commit. C'est la commande qui permet de récupérer les fichiers tels qu'ils étaient à un moment donné.</p>
+      <p>Il est possible, par exemple, d'utiliser la commande <code>git checkout 83d74</code> qui chargerait le commit dont l'identifiant unique commence par 83d74. Il est également possible de donner le nom d'une branche ou d'une étiquette : <code>git checkout master</code> ou <code>git checkout v0.1-alpha</code>.</p>
     </div>
     <footer>
       <div>
