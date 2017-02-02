@@ -19,6 +19,6 @@ $(function() {
     let image = $(`img[src='${$(this).attr('href')}']`)
     let name = image.parent().attr('name')
     $(this).attr('href', `#${name}`)
-    $(this).text(`(${image.parent().find('.legend').text()})`)
+    $(this).text(`${image.parent().find('.legend').text()}`)
   })
 })

@@ -94,6 +94,30 @@
         non-testé !
       </div>
 
+      <h1>Concepts</h1>
+
+      <h2>Commit</h2>
+      <p>Un commit (aucune traduction française correspondante) peut être symbolisé par un piton pour un alpiniste. Lors de son escalade, il place des points d'ancrage dans la paroi rocheuse, afin d'éviter de retomber jusqu'au sol s'il déroche. De manière similaire, chaque commit effectué enregistre l'état du répertoire de travail.</p>
+      <p>L'alpiniste utilise ce procédé pour assurer sa survie personnelle. Le programmeur, quant à lui, l'utilise pour avoir accès à chaque étape de son code. En effet, git sauvegarde des &laquo;&nbsp;clichés&nbsp;&raquo; de chaque version et permet à l'utilisateur d'accéder de manière arbitraire à n'importe quel commit.</p>
+      <p>Dans git, les commit sont représentés par le hash sha-1 du dépôt, codé sur 160 bits. Cela représente un chiffre hexadécimal de 40 signes de long. Un commit donné peut être identifié par le début de son ID, si celui-ci permet de l'identifier. Ainsi, s'il existe un seul commit dans le dépôt dont l'ID commence par un 7, ce chiffre suffit à l'identifier. Dès qu'un deuxième arrive, il faut ajouter des signes jusqu'à ce qu'il soit possible de les différencier.</p>
+      <p>Exemple :</p>
+      <pre>
+        <code>
+d8d1d7bdc9fc3e11d9098060c9a4994473dd31b0 -> identifié par d
+eae30b18b0d925998a23b4b71bf66ffd41cbd7d8 -> identifié par ea
+eb1fb877468c716f12eb141a5b580e2b4fcc7427 -> identifié par eb1
+ebd5e8636854e3cd6d8669a2cb27b39c36c6da95 -> identifié par ebd
+        </code>
+      </pre>
+      <p>Pour des raisons pratiques, on identifie souvent les commit par 4 à 8 signes. Il est rare que plus de précision soit nécessaire, car les chances d'avoir deux commit qui commencent par la même suite de 8 signes dans un projet qui contient 1000 commit est de l'ordre de 10<sup>-8</sup>.</p>
+
+      <h2>Branche</h2>
+      <p>Les branches peuvent être représentées comme une marque sur un commit (dans la <a href="img/diagramme-commit.svg" class="fig"></a>, les commits marqués &laquo;&nbsp;master&nbsp;&raquo; et &laquo;&nbsp;dev&nbsp;&raquo;). De ces commit, on peut retrouver en suivant les flèches tous les commits ancêtres, faisant donc partie de la même branche. Les trois plus anciens du diagramme font partie à la fois des deux branches.</p>
+      <img src="img/diagramme-commit.svg" alt="Représentation des branches">
+      <div class="information">
+        Les branches sont un élément essentiel de git. En fait, les seuls commits connus par git sont ceux qui sont identifiés par les branches et les étiquettes. Tous les autres doivent être découverts récursivement depuis un commit déjà connu.
+      </div>
+
       <h1>Fonctionnalités de base</h1>
       <p>Nous l'avons déjà vu, Git est un outil très puissant. En tant qu'utilisateur occasionnel, il est souvent fréquent de n'utiliser qu'une infime partie de Git. Voici ces parties indispensables.</p>
 
@@ -109,8 +133,8 @@
         <li>Les fichiers provenant de tiers (bibliothèques, plugins, bundles, etc.)</li>
         <li>Tout autre fichier qui peut être retrouvé ou recréé d'une autre manière</li>
       </ul>
-      <p>Afin d'éviter que ces fichiers ne soient versionnés, il suffot de les ajouter dans un fichier placé à la racine du dépôt appelé <code>.gitignore</code>. Comme son nom l'indique, ce fichier contient une liste de tous les fichiers censés être ignorés par Git.</p>
-      <p>Le site GitHub (qui propose entre autre un hébergement de dépôts Git gratuit, nous en reparlerons), possède un dépôt qui regroupe tous les principaux fichiers gitignore. Avant le développement d'une application, téléchargez toujours le fichier correspondant à votre langage sur <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>.</p>
+      <p>Afin d'éviter que ces fichiers ne soient versionnés, il suffit d'ajouter leur nom dans un fichier placé à la racine du dépôt appelé <code>.gitignore</code>. Comme son nom l'indique, ce fichier contient une liste de tous les fichiers censés être ignorés par Git.</p>
+      <p>Le site GitHub (qui propose entre autres un hébergement de dépôts Git gratuit, nous en reparlerons), possède un dépôt qui regroupe tous les principaux fichiers gitignore. Avant le développement d'une application, téléchargez toujours le fichier correspondant à votre langage sur <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>.</p>
       <div class="information">
         Les fichiers gitignore spécifiques aux OS, aux IDE, aux logiciels, etc. sont dans le sous-répertoire &laquo;&nbsp;Global&nbsp;&raquo; du dépôt.
       </div>
@@ -123,7 +147,7 @@
       </div>
 
       <h2>États des fichiers</h2>
-      <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés ci-dessous <a href="img/diagramme-etat-fichier.svg" class="fig"></a>.</p>
+      <p>Lors d'une utilisation normal de Git, les fichiers se trouvent dans plusieurs états successifs présentés ci-dessous (<a href="img/diagramme-etat-fichier.svg" class="fig"></a>).</p>
       <img class="center" src="img/diagramme-etat-fichier.svg" alt="Diagramme d'état des fichiers">
       <p>Un fichier non-versionné peut le devenir lorsqu'il est indexé puis versionné.</p>
       <p>Un fichier modifié peut être mis à jour exactement de la même façon.</p>
